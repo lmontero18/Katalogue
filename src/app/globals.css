@@ -48,11 +48,13 @@ body {
   --btn-primary-text: #ffffff;
   --btn-primary-hover: #373735;
   --btn-google-bg: #131314;
+  --btn-google-hover: #373736;
   --btn-secondary-bg: #fffdf4;
   --btn-secondary-border: #171715;
   --btn-secondary-hover: #f2f2f2;
   --btn-tertiary-bg: #e5e5e5;
   --btn-tertiary-border: #d1d1d1;
+  --btn-tertiary-hover: #d1d1d1;
 
   /* UI Interactive */
   --checkbox-bg: #ffeacb;

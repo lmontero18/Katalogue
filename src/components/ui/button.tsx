@@ -29,9 +29,11 @@ const buttonVariants = cva(
           bg-[var(--btn-tertiary-bg)]
           text-[var(--color-black)]
           border border-[var(--btn-tertiary-border)]
+          hover:bg-[var(--btn-tertiary-hover)]
         `,
         google: `
           bg-[var(--btn-google-bg)]
+          hover:bg-[var(--btn-google-hover)]
           text-white
         `,
       },
