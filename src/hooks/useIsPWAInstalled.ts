@@ -1,4 +1,7 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+interface NavigatorStandalone extends Navigator {
+  standalone?: boolean;
+}
 
 export function useIsPWAInstalled() {
   const [isInstalled, setIsInstalled] = useState(false);
@@ -8,7 +11,9 @@ export function useIsPWAInstalled() {
       const isIOS = /iphone|ipad|ipod/.test(
         window.navigator.userAgent.toLowerCase()
       );
-      const standalone = (window.navigator as any).standalone === true;
+
+      const navigator = window.navigator as NavigatorStandalone;
+      const standalone = navigator.standalone === true;
 
       const isStandalone = window.matchMedia(
         "(display-mode: standalone)"
@@ -19,4 +24,6 @@ export function useIsPWAInstalled() {
 
     if (typeof window !== "undefined") check();
   }, []);
+
+  return isInstalled;
 }
