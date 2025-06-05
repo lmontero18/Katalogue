@@ -10,7 +10,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const base = `
       w-full h-10 px-3 py-[10px]
       rounded-md border text-sm font-sans
-      bg-white
+      bg-[var(--color-pure-white)]
       placeholder:text-[var(--color-gray-400)]
       text-[var(--color-black)]
       outline-none transition
@@ -20,19 +20,19 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const variants = {
       default: `
         border-[var(--color-gray-200)]
-        bg-white
+        bg-[var(--color-pure-white)]
       `,
       error: `
         border-[var(--color-error)]
         text-[var(--color-error)]
         placeholder:text-[var(--color-error)]
-        bg-white
+        bg-[var(--color-pure-white)]
       `,
       success: `
         border-[var(--color-success)]
         text-black
         placeholder:text-[var(--color-success)]
-        bg-white
+        bg-[var(--color-pure-white)]
       `,
     };
 
