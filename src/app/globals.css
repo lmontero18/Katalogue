@@ -1,26 +1,95 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ---------------------------- */
+/* Base Styles + System Fonts  */
+/* ---------------------------- */
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Safe Area Padding (PWA & Mobile) */
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* ---------------------------- */
+/* Theme Variables (Tailwind 4)*/
+/* ---------------------------- */
+@theme {
+  /* Brand Colors */
+  --color-orange: #ffaf3d;
+  --color-black: #171715;
+  --color-paper: #f2f2f2;
+
+  /* UI Colors */
+  --color-white: #fffffa;
+  --color-pure-white: #ffffff;
+  --color-gray-100: #e5e5e5;
+  --color-gray-200: #d1d1d1;
+  --color-gray-400: #9f9f9f;
+  --color-gray-500: #757575;
+
+  /* State Colors */
+  --color-success: #25934a;
+  --color-error: #cf3838;
+  --color-focus: #6b85b7;
+
+  /* Interaction Colors */
+  --color-checkbox-bg: #ffecd4;
+  --color-checkbox-hover: #ffc992;
+  --color-checkbox-active: #f09942;
+  --color-card-hover: #ffc992;
+}
+
+/* ---------------------------- */
+/* Typography Utilities         */
+/* ---------------------------- */
+@layer utilities {
+  /* Heading 1 */
+  .heading-1 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.875rem; /* 30px */
+    line-height: 2.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .heading-1 {
+      font-size: 2.25rem; /* 36px */
+      line-height: 2.5rem;
+    }
+  }
+
+  /* Body - Normal */
+  .body-normal {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem;
+  }
+
+  /* Body - Small */
+  .body-sm {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem;
+  }
+
+  /* Body - Help & Links */
+  .body-help {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 0.75rem; /* 12px */
+    line-height: 1rem;
+  }
 }
