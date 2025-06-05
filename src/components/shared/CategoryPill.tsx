@@ -22,7 +22,7 @@ export const CategoryPill: React.FC<CategoryPillProps> = ({
         `
         flex items-center gap-2 rounded-full px-4 py-2 text-sm font-normal
         transition-all duration-200 ease-in-out
-        border border-transparent
+        border border-transparent cursor-pointer
         `,
         checked
           ? `
