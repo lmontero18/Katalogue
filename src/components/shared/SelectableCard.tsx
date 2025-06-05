@@ -6,6 +6,7 @@ interface SelectableCardProps {
   emoji: string;
   checked: boolean;
   onChange: () => void;
+  disabled?: boolean;
 }
 
 export const SelectableCard: React.FC<SelectableCardProps> = ({
@@ -13,16 +14,16 @@ export const SelectableCard: React.FC<SelectableCardProps> = ({
   emoji,
   checked,
   onChange,
+  disabled = false,
 }) => {
   return (
     <label
       className={cn(
         `
-        flex items-center justify-between w-full rounded-lg px-5 py-4 cursor-pointer
-        border text-md font-semibold
-        text-[var(--color-black)]
-
+        group relative flex items-center justify-between w-full rounded-lg px-5 py-4 cursor-pointer
+        border text-md font-semibold text-[var(--color-black)]
         transition-all duration-200 ease-in-out
+        focus-within:ring-2 focus-within:ring-[var(--color-focus)] focus-within:ring-offset-2
         `,
         checked
           ? `
@@ -36,7 +37,9 @@ export const SelectableCard: React.FC<SelectableCardProps> = ({
             border-[var(--card-border)]
             hover:bg-[var(--color-gray-100)]
             hover:border-[var(--card-border-hover)]
-          `
+          `,
+        disabled &&
+          "opacity-50 pointer-events-none cursor-not-allowed select-none"
       )}
     >
       <span>{label}</span>
@@ -46,6 +49,7 @@ export const SelectableCard: React.FC<SelectableCardProps> = ({
         className="sr-only"
         checked={checked}
         onChange={onChange}
+        disabled={disabled}
       />
     </label>
   );

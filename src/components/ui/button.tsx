@@ -7,7 +7,6 @@ const buttonVariants = cva(
   `
   inline-flex items-center justify-center rounded-md text-lg font-medium font-sans
   transition-all duration-150 ease-out
-  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
   cursor-pointer
   active:scale-95
   disabled:!scale-100 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50
@@ -64,7 +63,11 @@ function Button({
 
   return (
     <Comp
-      className={cn(buttonVariants({ variant, size }), className)}
+      className={cn(
+        buttonVariants({ variant, size }),
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus)] focus-visible:ring-offset-2",
+        className
+      )}
       {...props}
     />
   );

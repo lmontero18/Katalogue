@@ -14,25 +14,22 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       placeholder:text-[var(--color-gray-400)]
       text-[var(--color-black)]
       outline-none transition
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus)] focus-visible:ring-offset-1
     `;
 
     const variants = {
       default: `
         border-[var(--color-gray-200)]
-        focus:border-[var(--color-focus)]
-        focus:ring-2 focus:ring-[var(--color-focus)]
       `,
       error: `
         border-[var(--color-error)]
         text-[var(--color-error)]
         placeholder:text-[var(--color-error)]
-        focus:ring-2 focus:ring-[var(--color-error)]
       `,
       success: `
         border-[var(--color-success)]
-        text-[var(--color-success)]
+        text-black
         placeholder:text-[var(--color-success)]
-        focus:ring-2 focus:ring-[var(--color-success)]
       `,
     };
 
