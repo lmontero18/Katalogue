@@ -25,6 +25,11 @@ body {
 /* Theme Variables (Tailwind 4)*/
 /* ---------------------------- */
 @theme {
+  /* Status Colors */
+  --color-error: #cf3838;
+  --color-success: #25934a;
+  --color-focus: #6885b7;
+
   /* Brand Colors */
   --color-orange: #ffaf3d;
   --color-black: #171715;

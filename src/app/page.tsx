@@ -44,14 +44,27 @@ export default function Home() {
 
   return (
     <main className="space-y-10 p-8 max-w-3xl mx-auto">
-      <section>
+      <section className="space-y-5">
         <h2 className="heading-1 mb-4">Inputs</h2>
-        <Input
-          type="text"
-          placeholder="Ingresa tu nombre"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
+
+        <div className="space-y-1">
+          <label className="text-sm font-medium">Normal</label>
+          <Input
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            status="default"
+          />
+        </div>
+
+        <div className="space-y-1">
+          <label className="text-sm font-medium">Con éxito</label>
+          <Input status="success" />
+        </div>
+
+        <div className="space-y-1">
+          <label className="text-sm font-medium">Con error</label>
+          <Input status="error" />
+        </div>
       </section>
 
       <section>

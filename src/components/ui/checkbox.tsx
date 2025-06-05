@@ -18,7 +18,7 @@ function Checkbox({
         size-4 shrink-0 rounded-[4px] border outline-none shadow-xs
         transition-colors cursor-pointer
 
-        bg-[var(--checkbox-bg)]
+        bg-white
         border-[var(--color-black)]
 
         hover:bg-[var(--checkbox-hover)]
