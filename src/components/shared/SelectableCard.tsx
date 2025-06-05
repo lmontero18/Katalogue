@@ -18,20 +18,25 @@ export const SelectableCard: React.FC<SelectableCardProps> = ({
     <label
       className={cn(
         `
-        flex items-center justify-between w-full rounded-lg px-5 py-4 cursor-pointer transition border
-        text-md font-semibold text-black
+        flex items-center justify-between w-full rounded-lg px-5 py-4 cursor-pointer
+        border text-md font-semibold
+        text-[var(--color-black)]
+
+        transition-all duration-200 ease-in-out
         `,
         checked
           ? `
-              bg-[var(--color-checkbox-bg)]
-              border-1 border-[var(--color-orange)]
-              hover:bg-[var(--color-checkbox-hover)]
-            `
+            bg-[var(--card-bg)]
+            border-[var(--card-border-active)]
+            hover:border-[var(--card-border-active-hover)]
+            shadow-sm
+          `
           : `
-              bg-[var(--color-white)]
-              border-[var(--color-gray-200)]
-              hover:bg-[var(--color-gray-100)]
-            `
+            bg-[var(--color-white)]
+            border-[var(--card-border)]
+            hover:bg-[var(--color-gray-100)]
+            hover:border-[var(--card-border-hover)]
+          `
       )}
     >
       <span>{label}</span>

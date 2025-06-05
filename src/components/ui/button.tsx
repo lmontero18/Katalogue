@@ -5,34 +5,34 @@ import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
   `
-  inline-flex items-center justify-center rounded-md font-sans text-md font-medium 
-  transition-transform transition-colors
+  inline-flex items-center justify-center rounded-md text-md font-medium font-sans
+  transition-colors transition-transform duration-200
   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
   disabled:opacity-50 disabled:cursor-not-allowed
-  active:scale-95
+  active:scale-95 cursor-pointer
   `,
   {
     variants: {
       variant: {
         primary: `
-          bg-[var(--color-black)]
-          text-white
-          hover:bg-[var(--color-button-hover)] 
-          transition-colors
+          bg-[var(--btn-primary-bg)]
+          text-[var(--btn-primary-text)]
+          hover:bg-[var(--btn-primary-hover)]
         `,
         secondary: `
-          bg-[var(--color-pure-white)]
+          bg-[var(--btn-secondary-bg)]
           text-[var(--color-black)]
-          border border-[var(--color-black)]
+          border border-[var(--btn-secondary-border)]
+          hover:bg-[var(--btn-secondary-hover)]
         `,
         tertiary: `
-          bg-[var(--color-gray-200)]
+          bg-[var(--btn-tertiary-bg)]
           text-[var(--color-black)]
+          border border-[var(--btn-tertiary-border)]
         `,
         google: `
-          bg-[var(--color-black)]
+          bg-[var(--btn-google-bg)]
           text-white
-          font-medium
         `,
       },
       size: {

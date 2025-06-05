@@ -3,7 +3,6 @@
 import * as React from "react";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { CheckIcon } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 
 function Checkbox({
@@ -16,18 +15,18 @@ function Checkbox({
       className={cn(
         `
         peer
-        size-4 shrink-0
-        rounded-[4px] border shadow-xs outline-none
-        bg-[var(--color-white)]
-        border-black
-        transition-colors
+        size-4 shrink-0 rounded-[4px] border outline-none shadow-xs
+        transition-colors cursor-pointer
 
-        hover:bg-[var(--color-checkbox-hover)]
+        bg-[var(--checkbox-bg)]
+        border-[var(--color-black)]
 
-        data-[state=checked]:bg-[var(--color-orange)]
-        data-[state=checked]:border-black
+        hover:bg-[var(--checkbox-hover)]
+
+        data-[state=checked]:bg-[var(--checkbox-active)]
+        data-[state=checked]:border-[var(--color-black)]
         data-[state=checked]:text-[var(--color-white)]
-        data-[state=checked]:hover:bg-[var(--color-checkbox-active)]
+        data-[state=checked]:hover:bg-[var(--checkbox-active-hover)]
 
         focus-visible:ring-[3px]
         focus-visible:border-[var(--color-focus)]
@@ -45,7 +44,7 @@ function Checkbox({
     >
       <CheckboxPrimitive.Indicator
         data-slot="checkbox-indicator"
-        className="flex items-center text-black justify-center transition-none"
+        className="flex items-center justify-center text-[var(--color-black)] transition-none"
       >
         <CheckIcon className="size-3.5" />
       </CheckboxPrimitive.Indicator>

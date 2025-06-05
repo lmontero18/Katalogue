@@ -37,19 +37,33 @@ body {
   --color-gray-200: #d1d1d1;
   --color-gray-400: #9f9f9f;
   --color-gray-500: #757575;
-  --color-button-hover: #373735;
 
-  /* State Colors */
-  --color-success: #25934a;
-  --color-error: #cf3838;
-  --color-focus: #6b85b7;
+  /* UI Buttons */
+  --btn-primary-bg: #171715;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #373735;
+  --btn-google-bg: #131314;
+  --btn-secondary-bg: #fffdf4;
+  --btn-secondary-border: #171715;
+  --btn-secondary-hover: #f2f2f2;
+  --btn-tertiary-bg: #e5e5e5;
+  --btn-tertiary-border: #d1d1d1;
 
-  /* Interaction Colors */
-  --color-checkbox-bg: #ffeacb;
-  --color-checkbox-hover: #fbce8c;
-  --color-checkbox-active: #ffaf3d;
-  --color-checkbox-active-hover: #f59b1c;
-  --color-card-hover: #ffcf87;
+  /* UI Interactive */
+  --checkbox-bg: #ffeacb;
+  --checkbox-hover: #fbce8c;
+  --checkbox-active: #ffaf3d;
+  --checkbox-active-hover: #f59b1c;
+
+  --card-bg: #ffeacb;
+  --card-bg-active: #ffeacb;
+  --card-border: #d1d1d1;
+  --card-border-active: #ffaf3d;
+  --card-hover: #f2f2f2;
+  --card-border-hover: #9f9f9f;
+  --card-border-active-hover: #f59b1c;
+  --card-bg-active-hover: #f59b1c;
+  --card-border-hover-yellow: #ffcf87;
 }
 
 /* ---------------------------- */
