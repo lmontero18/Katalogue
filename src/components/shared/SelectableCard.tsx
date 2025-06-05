@@ -17,13 +17,24 @@ export const SelectableCard: React.FC<SelectableCardProps> = ({
   return (
     <label
       className={cn(
-        "flex items-center justify-between w-full rounded-lg border px-5 py-4 cursor-pointer transition",
+        `
+        flex items-center justify-between w-full rounded-lg px-5 py-4 cursor-pointer transition border
+        text-md font-semibold text-black
+        `,
         checked
-          ? "bg-[#FFF2E1] border-1 border-[var(--color-orange)]"
-          : "bg-white border-[var(--color-gray-200)]"
+          ? `
+              bg-[var(--color-checkbox-bg)]
+              border-1 border-[var(--color-orange)]
+              hover:bg-[var(--color-checkbox-hover)]
+            `
+          : `
+              bg-[var(--color-white)]
+              border-[var(--color-gray-200)]
+              hover:bg-[var(--color-gray-100)]
+            `
       )}
     >
-      <span className="text-md font-semibold text-black">{label}</span>
+      <span>{label}</span>
       <span className="text-xl">{emoji}</span>
       <input
         type="checkbox"

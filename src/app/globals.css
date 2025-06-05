@@ -31,12 +31,13 @@ body {
   --color-paper: #f2f2f2;
 
   /* UI Colors */
-  --color-white: #fffffa;
+  --color-white: #fffdf4;
   --color-pure-white: #ffffff;
   --color-gray-100: #e5e5e5;
   --color-gray-200: #d1d1d1;
   --color-gray-400: #9f9f9f;
   --color-gray-500: #757575;
+  --color-button-hover: #373735;
 
   /* State Colors */
   --color-success: #25934a;
@@ -44,10 +45,11 @@ body {
   --color-focus: #6b85b7;
 
   /* Interaction Colors */
-  --color-checkbox-bg: #ffecd4;
-  --color-checkbox-hover: #ffc992;
-  --color-checkbox-active: #f09942;
-  --color-card-hover: #ffc992;
+  --color-checkbox-bg: #ffeacb;
+  --color-checkbox-hover: #fbce8c;
+  --color-checkbox-active: #ffaf3d;
+  --color-checkbox-active-hover: #f59b1c;
+  --color-card-hover: #ffcf87;
 }
 
 /* ---------------------------- */
@@ -66,6 +68,24 @@ body {
     .heading-1 {
       font-size: 2.25rem; /* 36px */
       line-height: 2.5rem;
+    }
+  }
+
+  /* ---------------------------- */
+  /* Animation Utilities         */
+  /* ---------------------------- */
+  @layer utilities {
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
   }
 

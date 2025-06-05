@@ -18,23 +18,23 @@ function Checkbox({
         peer
         size-4 shrink-0
         rounded-[4px] border shadow-xs outline-none
-        border-color-gray-200
-        bg-white
+        bg-[var(--color-white)]
+        border-black
         transition-colors
 
-        hover:bg-color-checkbox-hover
-        active:bg-color-checkbox-active
+        hover:bg-[var(--color-checkbox-hover)]
 
-        data-[state=checked]:bg-color-orange
-        data-[state=checked]:text-white
-        data-[state=checked]:border-color-orange
+        data-[state=checked]:bg-[var(--color-orange)]
+        data-[state=checked]:border-black
+        data-[state=checked]:text-[var(--color-white)]
+        data-[state=checked]:hover:bg-[var(--color-checkbox-active)]
 
         focus-visible:ring-[3px]
-        focus-visible:border-color-focus
-        focus-visible:ring-color-focus/50
+        focus-visible:border-[var(--color-focus)]
+        focus-visible:ring-[var(--color-focus)]/50
 
-        aria-invalid:border-color-error
-        aria-invalid:ring-color-error/30
+        aria-invalid:border-[var(--color-error)]
+        aria-invalid:ring-[var(--color-error)]/30
 
         disabled:cursor-not-allowed
         disabled:opacity-50
@@ -45,7 +45,7 @@ function Checkbox({
     >
       <CheckboxPrimitive.Indicator
         data-slot="checkbox-indicator"
-        className="flex items-center justify-center text-current transition-none"
+        className="flex items-center text-black justify-center transition-none"
       >
         <CheckIcon className="size-3.5" />
       </CheckboxPrimitive.Indicator>
