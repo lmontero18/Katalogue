@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 
@@ -9,7 +9,6 @@ interface SplashScreenProps {
 }
 
 export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
-  const [show, setShow] = useState(true);
   const controls = useAnimation();
 
   useEffect(() => {
@@ -32,17 +31,20 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
 
       await new Promise((res) => setTimeout(res, 3000));
 
-      setShow(false);
       onFinish();
     };
 
     runSequence();
   }, [controls, onFinish]);
 
-  if (!show) return null;
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--color-orange)]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--color-orange)]"
+    >
       <motion.div
         initial={{ y: -200, rotate: 0, opacity: 0 }}
         animate={controls}
@@ -55,6 +57,6 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
           priority
         />
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
