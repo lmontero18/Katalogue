@@ -2,13 +2,19 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { SplashScreen } from "@/components/shared/SplashScreen";
-import { AnimatePresence } from "framer-motion";
 import Strips from "@/components/home/Strips";
+import { useIsMobile } from "@/hooks/useIsMobile";
+import MobileStartDrawer from "@/components/shared/MobileStartDrawer";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const isMobile = useIsMobile();
+  const router = useRouter();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -16,6 +22,14 @@ export default function Home() {
     }, 3000);
     return () => clearTimeout(timeout);
   }, []);
+
+  const handleStartClick = () => {
+    if (isMobile) {
+      setIsDrawerOpen(true);
+    } else {
+      router.push("/register");
+    }
+  };
 
   return (
     <>
@@ -25,7 +39,6 @@ export default function Home() {
 
       {!showSplash && (
         <div className="relative">
-          {/* Strips se muestra como capa flotante */}
           <Strips />
 
           <main className="z-20 flex flex-col justify-between min-h-screen px-6 py-10 bg-[var(--color-white)] text-center">
@@ -45,7 +58,10 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-center gap-4">
-              <Button className="w-full max-w-xs text-white bg-[var(--color-black)] hover:bg-[var(--btn-primary-hover)]">
+              <Button
+                className="w-full max-w-xs text-white bg-[var(--color-black)] hover:bg-[var(--btn-primary-hover)]"
+                onClick={handleStartClick}
+              >
                 Empieza ahora
               </Button>
 
@@ -55,6 +71,13 @@ export default function Home() {
               </p>
             </div>
           </main>
+
+          {isMobile && (
+            <MobileStartDrawer
+              open={isDrawerOpen}
+              onOpenChange={setIsDrawerOpen}
+            />
+          )}
         </div>
       )}
     </>
