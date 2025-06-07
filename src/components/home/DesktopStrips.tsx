@@ -18,7 +18,7 @@ export default function DesktopStrips() {
   return (
     <div className="absolute top-0 left-0 w-full h-[240px] z-10 pointer-events-none">
       <div className="grid grid-cols-8 w-full h-full gap-6 items-start">
-        {parts.map((part, index) => {
+        {parts.map((part) => {
           const delay = Math.random() * 0.4 + 0.2;
 
           return (
